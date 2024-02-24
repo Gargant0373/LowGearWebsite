@@ -52,12 +52,12 @@
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        height: 180px;
+        height: 150px;
         margin: 0;
     }
 
     .navbar-placeholder {
-        margin-bottom: 180px;
+        margin-bottom: 170px;
     }
 
     .navbar .high-menu {

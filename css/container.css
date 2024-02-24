@@ -137,4 +137,8 @@
     .container .imgg.square {
         width: 60vw;
     }
+
+    .container .text-area .text {
+        text-align: left;
+    }
 }
