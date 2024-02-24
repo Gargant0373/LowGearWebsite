@@ -1,0 +1,20 @@
+#countdown-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 40px;
+
+    background-color: #BD5200;
+    border-top: 1px solid #F0EBE7;
+    border-bottom: 1px solid #F0EBE7;
+
+    padding: 10px;
+}
+
+#countdown-container #subtitle {
+    font-size: 25px;
+    font-weight: bold;
+    filter: drop-shadow(-8px 7px 13px rgba(0, 0, 0, 0.1));
+}

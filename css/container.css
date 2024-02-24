@@ -1,0 +1,137 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.container .column {
+    flex-direction: column;
+}
+
+.container .node {
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-basis: 50%;
+}
+
+.container.column .node {
+    flex-basis: 100%;
+}
+
+.container .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .video {
+    width: 774px;
+    height: 472px;
+}
+
+@media (max-width: 1200px) {
+    .container .video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.container .imgg {
+    width: 45vw;
+    height: auto;
+
+    opacity: 0;
+    scale: 0.8;
+
+    animation: fadeIn linear forwards;
+    animation-timeline: view();
+    animation-range: 100px 500px;
+}
+
+.container .imgg.square {
+    width: 30vw;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        scale: 0.8;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.container .text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 45vw;
+}
+
+.container .text-area .title {
+    font-weight: bold;
+    text-align: flex-start;
+    font-size: 40px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #BD5200;
+}
+
+.container .text-area .subtitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: flex-start;
+}
+
+.container .text-area .text {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.container .divider {
+    width: 80%;
+    height: 1px;
+
+    background-color: #BD5200;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container .spacer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container .divider .centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .container .text-area {
+        width: 80vw;
+    }
+
+    .container .imgg {
+        width: 80vw;
+    }
+
+    .container .imgg.square {
+        width: 60vw;
+    }
+}
