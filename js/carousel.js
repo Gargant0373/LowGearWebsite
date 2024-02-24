@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var circles = carousel.circles;
     var imageSlides = carousel.imageSlides;
 
-    for (var i = 0; i < imageSlides.length; i++) {
+    if(circles.length != imageSlides.length)
+      console.log("The number of circles and images do not match.");
+
+    for (var i = 0; i < circles.length; i++) {
       circles[i].classList.remove('dot');
     }
   }
@@ -103,5 +106,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   slideshow();
-  var imageSlideshowInterval = setInterval(slideshow, 10000);
+  var imageSlideshowInterval = setInterval(slideshow, 2000);
 });

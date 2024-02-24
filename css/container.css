@@ -6,6 +6,7 @@
     flex-wrap: wrap;
 
     width: 100%;
+    height: auto;
     margin-bottom: 25px;
 }
 
@@ -22,6 +23,7 @@
     justify-content: center;
 
     flex-basis: 50%;
+    height: auto;
 }
 
 .container.column .node {
@@ -80,6 +82,7 @@
     justify-content: center;
 
     width: 45vw;
+    height: auto;
 }
 
 .container .text-area .title {

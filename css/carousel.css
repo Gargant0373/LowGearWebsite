@@ -16,6 +16,7 @@
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: -1;
+    object-fit: contain;
 }
 
 /* add 'visible' class via Javascript */
@@ -75,7 +76,7 @@
 @media screen and (max-width: 768px) {
     .slideshowContainer {
         width: 80vw;
-        height: auto;
+        height: 200px;
     }
 
     .imageSlides {
