@@ -3,7 +3,12 @@
     overflow: hidden;
     margin: 50px 0 75px;
     width: 45vw;
-    height: 500px;
+    height: 350px;
+    opacity: 0;
+
+    animation: fadeIn linear forwards;
+    animation-timeline: view();
+    animation-range: 100px 500px;
 }
 
 .imageSlides {
@@ -11,8 +16,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    min-width: 100vw;
-    min-height: 100%;
+    width: 45vw
+    height: auto;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: -1;

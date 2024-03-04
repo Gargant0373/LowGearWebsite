@@ -1,0 +1,85 @@
+.prefooter {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    width: auto;
+
+    margin-top: 30px;
+}
+
+.prefooter .line {
+    width: 15vw;
+    background-color: #F0EBE7;
+    height: 1px;
+}
+
+.prefooter a {
+    color: #F0EBE7;
+
+    padding: 15px;
+    font-size: 2vw;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-bottom: 30px;
+}
+
+.footer .frow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footer .felem {
+    margin-top: 3px;
+}
+
+.footer .end {
+    height: 5vh;
+}
+
+@media screen and (max-width: 768px){
+    .prefooter {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .prefooter a {
+        font-size: 5vw;
+    }
+
+    .footer .felem {
+        font-size: 10px;
+    }
+    
+    .footer .felem img {
+        width: 20vw;
+    }
+}
+
+.footer .felem a {
+    background: #FFFFFF;
+    background: linear-gradient(to right, #FFFFFF 0%, #4dad48 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
