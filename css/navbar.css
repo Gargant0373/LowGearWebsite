@@ -49,6 +49,11 @@
     transition: color 0.4s ease;
 }
 
+.navbar .menu .menu-item:hover {
+    color: #BD5200;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -70,7 +75,26 @@
     }
 }
 
-.navbar .menu .menu-item:hover {
+.navbar .language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar .language .entity {
+    text-decoration: none;
+    color: #F0EBE7;
+}
+
+.navbar .language .entity.selected {
     color: #BD5200;
-    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .language {
+        position: absolute;
+        right: 0.5%;
+        top: 0.5%;
+    }
 }
