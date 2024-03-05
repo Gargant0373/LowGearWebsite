@@ -18,3 +18,13 @@
     font-weight: bold;
     filter: drop-shadow(-8px 7px 13px rgba(0, 0, 0, 0.1));
 }
+
+@media screen and (max-width: 768px) {
+    #countdown-container #subtitle {
+        font-size: 20px;
+    }
+
+    #countdown-container #countdown {
+        font-size: 15px;
+    }
+}

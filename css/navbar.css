@@ -19,6 +19,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .navbar .logo {
@@ -27,12 +28,11 @@
 }
 
 .navbar .logo img {
-    width: 21rem;
+    width: 250px;
     height: auto;
 }
 
 .navbar .high-menu {
-    margin: 0 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,7 +47,7 @@
 
 .navbar .menu .menu-item {
     margin: 0 10px;
-    font-size: 1.6rem;
+    font-size: 25px;
     transition: color 0.4s ease;
 }
 
@@ -56,15 +56,35 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1250px) {
+    .navbar .menu .menu-item {
+        font-size: 23px;
+    }
+
+    .navbar .high-menu {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar .menu .menu-item {
+        font-size: 18px;
+    }
+
+    .navbar .high-menu {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        height: 150px;
+        height: 140px;
         margin: 0;
     }
 
     .navbar-placeholder {
-        margin-bottom: 170px;
+        margin-bottom: 150px;
     }
 
     .navbar .high-menu {
@@ -73,7 +93,7 @@
     }
 
     .navbar .menu .menu-item {
-        font-size: 3.6vw;
+        font-size: 15px;
     }
 
     .navbar .logo {
@@ -81,7 +101,7 @@
     }
 
     .navbar .logo img {
-        width: 70vw;
+        width: 270px;
     }
 }
 
@@ -90,6 +110,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    margin-right: 50px;
 }
 
 .navbar .language .entity {
@@ -103,6 +125,7 @@
 
 @media screen and (max-width: 768px) {
     .navbar .language {
+        margin: 0;
         position: absolute;
         right: 0.5%;
         top: 0.5%;
