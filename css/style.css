@@ -10,6 +10,9 @@ body {
     font-style: normal;
     color: #F0EBE7;
     background-color: #35312C;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
 ::-webkit-scrollbar {

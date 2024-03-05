@@ -22,11 +22,6 @@
     flex-wrap: wrap;
 }
 
-.navbar .logo {
-    margin-top: 10px;
-    margin-left: 50px;
-}
-
 .navbar .logo img {
     width: 250px;
     height: auto;
