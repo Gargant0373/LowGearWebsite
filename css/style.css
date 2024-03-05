@@ -11,3 +11,7 @@ body {
     color: #F0EBE7;
     background-color: #35312C;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

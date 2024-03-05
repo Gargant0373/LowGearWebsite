@@ -8,7 +8,7 @@
     top: 0;
     z-index: 1;
 
-    width: 100vw;
+    width: 100%;
     height: 80px;
 
     background-color: #275225;
@@ -17,15 +17,17 @@
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: row;
 }
 
 .navbar .logo {
+    margin-top: 10px;
     margin-left: 50px;
 }
 
 .navbar .logo img {
-    width: 40vh;
+    width: 21rem;
     height: auto;
 }
 
@@ -45,7 +47,7 @@
 
 .navbar .menu .menu-item {
     margin: 0 10px;
-    font-size: 25px;
+    font-size: 1.6rem;
     transition: color 0.4s ease;
 }
 
@@ -71,7 +73,15 @@
     }
 
     .navbar .menu .menu-item {
-        font-size: 20px;
+        font-size: 3.6vw;
+    }
+
+    .navbar .logo {
+        margin: 0px;
+    }
+
+    .navbar .logo img {
+        width: 70vw;
     }
 }
 
