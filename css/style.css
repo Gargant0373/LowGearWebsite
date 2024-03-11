@@ -26,3 +26,8 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
+
+a {
+    color: #F0EBE7;
+    text-decoration: underline;
+}

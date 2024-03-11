@@ -53,7 +53,7 @@
     height: 5vh;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1280px){
     .prefooter {
         margin-top: 10px;
         margin-bottom: 20px;

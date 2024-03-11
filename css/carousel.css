@@ -1,9 +1,8 @@
 .slideshowContainer {
     position: relative;
     overflow: hidden;
-    margin: 50px 0 75px;
     width: 45vw;
-    height: 350px;
+    height: 600px;
     opacity: 0;
 
     animation: fadeIn linear forwards;
@@ -78,10 +77,10 @@
     border: solid 2px rgba(255, 255, 255, 0.5);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1280px) {
     .slideshowContainer {
         width: 80vw;
-        height: 200px;
+        height: 430px;
     }
 
     .slideshowCircles {
