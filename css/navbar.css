@@ -56,6 +56,15 @@
     cursor: pointer;
 }
 
+.navbar .language {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 230px;
+}
+
 @media screen and (max-width: 1250px) {
     .navbar .menu .menu-item {
         font-size: 23px;
@@ -78,17 +87,21 @@
     .navbar .logo img {
         width: 180px;
     }
+    
+    .navbar .language {
+        width: 180px;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        height: 140px;
+        height: 120px;
         margin: 0;
     }
 
     .navbar-placeholder {
-        margin-bottom: 150px;
+        margin-bottom: 130px;
     }
 
     .navbar .high-menu {
@@ -101,21 +114,16 @@
     }
 
     .navbar .logo img {
-        width: 120px;
+        width: 170px;
     }
 
     .navbar .logo {
         margin: 0px;
     }
-}
-
-.navbar .language {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    margin-right: 50px;
+    
+    .navbar .language {
+        width: auto;
+    }
 }
 
 .navbar .language .entity {

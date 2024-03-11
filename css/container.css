@@ -98,6 +98,13 @@
     font-size: 25px;
     margin-bottom: 10px;
     text-align: flex-start;
+    font-weight: bold;
+    color: #BD5200;
+}
+
+.container .text-area .subtitle.primary_color {
+    font-weight: normal;
+    color: #F0EBE7;
 }
 
 .container .text-area .text {
