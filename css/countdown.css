@@ -6,11 +6,16 @@
 
     margin-bottom: 40px;
 
-    background-color: #BD5200;
     border-top: 1px solid #F0EBE7;
     border-bottom: 1px solid #F0EBE7;
 
     padding: 10px;
+
+    background: rgb(189, 82, 0);
+    background: -moz-linear-gradient(90deg, rgba(189, 82, 0, 1) 0%, rgba(150, 65, 0, 1) 98%);
+    background: -webkit-linear-gradient(90deg, rgba(189, 82, 0, 1) 0%, rgba(150, 65, 0, 1) 98%);
+    background: linear-gradient(90deg, rgba(189, 82, 0, 1) 0%, rgba(150, 65, 0, 1) 98%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bd5200", endColorstr="#964100", GradientType=1);
 }
 
 #countdown-container #subtitle {

@@ -11,7 +11,12 @@
     width: 100%;
     height: 80px;
 
-    background-color: #275225;
+    background: rgb(70, 89, 47);
+    background: -moz-linear-gradient(90deg, rgba(70, 89, 47, 1) 0%, rgba(40, 54, 24, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(70, 89, 47, 1) 0%, rgba(40, 54, 24, 1) 100%);
+    background: linear-gradient(90deg, rgba(70, 89, 47, 1) 0%, rgba(40, 54, 24, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#46592f", endColorstr="#283618", GradientType=1);
+
     color: #F0EBE7;
     font-weight: bold;
 

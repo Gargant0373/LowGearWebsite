@@ -11,8 +11,16 @@ body {
     color: #F0EBE7;
     background-color: #35312C;
 
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+
+    background: rgb(53, 49, 44);
+    background: -moz-linear-gradient(90deg, rgba(53, 49, 44, 1) 0%, rgba(38, 36, 32, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(53, 49, 44, 1) 0%, rgba(38, 36, 32, 1) 100%);
+    background: linear-gradient(90deg, rgba(53, 49, 44, 1) 0%, rgba(38, 36, 32, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#35312c", endColorstr="#262420", GradientType=1);
 }
 
 ::-webkit-scrollbar {
