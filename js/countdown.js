@@ -1,7 +1,7 @@
 const targetDate = new Date();
 targetDate.setFullYear(2024);
-targetDate.setMonth(7);
-targetDate.setDate(1);
+targetDate.setMonth(8);
+targetDate.setDate(11);
 
 document.addEventListener('DOMContentLoaded', function () {
     // Update the countdown every second
