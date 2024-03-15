@@ -43,8 +43,8 @@
 
 @media (max-width: 1200px) {
     .container .video {
-        width: 100%;
-        height: auto;
+        width: 80vw;
+        height: 40vw;
     }
 }
 
