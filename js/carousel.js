@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const initializeCarousels = () => {
     const containers = document.querySelectorAll('.slideshowContainer');
     containers.forEach(container => {
-      console.log('Initializing carousel:', container.id);
       const imageSlides = container.querySelectorAll('.imageSlides');
       imageSlides[0].classList.add('visible');
 
@@ -35,13 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
   let xDown = null;
 
   function handleTouchStart(event) {
-    console.log('Touch start');
     const firstTouch = event.touches[0];
     xDown = firstTouch.clientX;
   }
 
   function handleTouchMove(event) {
-    console.log('Touch move');
     if (!xDown) {
       return;
     }
@@ -52,35 +49,30 @@ document.addEventListener('DOMContentLoaded', function () {
     if (Math.abs(xDiff) > 50) { // Minimum swipe distance
       const containerId = event.currentTarget.id;
       const direction = xDiff > 0 ? 1 : -1;
-      console.log('Swipe direction:', direction);
       arrowClick(containerId, direction);
       xDown = null;
     }
   }
 
   function handleTouchEnd() {
-    console.log('Touch end');
     xDown = null;
   }
 
   // Hide all images
   const hideImages = (id) => {
     const carousel = carousels[id];
-    console.log('Hiding images for carousel:', id);
     carousel.imageSlides.forEach(image => image.classList.remove('visible'));
   };
 
   // Remove all dots
   const removeDots = (id) => {
     const carousel = carousels[id];
-    console.log('Removing dots for carousel:', id);
     carousel.circles.forEach(circle => circle.classList.remove('dot'));
   };
 
   // Update images and dots
   const updateCarousel = (id) => {
     const carousel = carousels[id];
-    console.log('Updating carousel:', id);
     const previousImage = carousel.imageSlides[carousel.counter];
     previousImage.classList.remove('visible');
     
@@ -96,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Handle arrow clicks
   const arrowClick = (id, increment) => {
-    console.log('Arrow click:', id, 'Increment:', increment);
     const carousel = carousels[id];
     clearInterval(carousel.interval);
 
