@@ -16,7 +16,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 45vw;
-    height: auto;
+    height: 50vh;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     z-index: -1;
@@ -89,6 +89,6 @@
 
     .imageSlides {
         width: 80vw;
-        height: auto;
+        height: 45vh;
     }
 }

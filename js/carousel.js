@@ -1,110 +1,124 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // IMAGE SLIDES & CIRCLES ARRAYS, & COUNTER
 
-  const carousells = {};
+  const carousels = {};
 
-  var containers = document.getElementsByClassName('slideshowContainer');
-  Array.from(containers).forEach(function (carousel) {
-    var imageSlides = carousel.getElementsByClassName('imageSlides');
-    var circles = carousel.getElementsByClassName('circle');
-    var leftArrow = carousel.getElementsByClassName('leftArrow')[0];
-    var rightArrow = carousel.getElementsByClassName('rightArrow')[0];
+  // Initialize carousels
+  const initializeCarousels = () => {
+    const containers = document.querySelectorAll('.slideshowContainer');
+    containers.forEach(container => {
+      console.log('Initializing carousel:', container.id);
+      const imageSlides = container.querySelectorAll('.imageSlides');
+      imageSlides[0].classList.add('visible');
 
-    leftArrow.addEventListener('click', arrowClick);
-    rightArrow.addEventListener('click', arrowClick);
+      const circles = container.querySelectorAll('.circle');
+      const leftArrow = container.querySelector('.leftArrow');
+      const rightArrow = container.querySelector('.rightArrow');
 
-    carousells[carousel.id] = {
-      imageSlides: imageSlides,
-      circles: circles,
-      leftArrow: leftArrow,
-      rightArrow: rightArrow,
-      counter: 0
-    };
-  });
+      leftArrow.addEventListener('click', () => arrowClick(container.id, -1));
+      rightArrow.addEventListener('click', () => arrowClick(container.id, 1));
 
-  // HIDE ALL IMAGES FUNCTION
-  function hideImages(id) {
-    var carousel = carousells[id];
-    var imageSlides = carousel.imageSlides;
+      container.addEventListener('touchstart', handleTouchStart);
+      container.addEventListener('touchmove', handleTouchMove);
+      container.addEventListener('touchend', handleTouchEnd);
 
-    for (var i = 0; i < imageSlides.length; i++) {
-      imageSlides[i].classList.remove('visible');
+      carousels[container.id] = {
+        imageSlides: Array.from(imageSlides),
+        circles: Array.from(circles),
+        leftArrow: leftArrow,
+        rightArrow: rightArrow,
+        counter: 0
+      };
+    });
+  };
+
+  // Swipe handling variables
+  let xDown = null;
+
+  function handleTouchStart(event) {
+    console.log('Touch start');
+    const firstTouch = event.touches[0];
+    xDown = firstTouch.clientX;
+  }
+
+  function handleTouchMove(event) {
+    console.log('Touch move');
+    if (!xDown) {
+      return;
+    }
+
+    const xUp = event.touches[0].clientX;
+    const xDiff = xDown - xUp;
+
+    if (Math.abs(xDiff) > 50) { // Minimum swipe distance
+      const containerId = event.currentTarget.id;
+      const direction = xDiff > 0 ? 1 : -1;
+      console.log('Swipe direction:', direction);
+      arrowClick(containerId, direction);
+      xDown = null;
     }
   }
 
-  // REMOVE ALL DOTS FUNCTION
-  function removeDots(id) {
-    var carousel = carousells[id];
-    var circles = carousel.circles;
-    var imageSlides = carousel.imageSlides;
-
-    if(circles.length != imageSlides.length)
-      console.log("The number of circles and images do not match.");
-
-    for (var i = 0; i < circles.length; i++) {
-      circles[i].classList.remove('dot');
-    }
+  function handleTouchEnd() {
+    console.log('Touch end');
+    xDown = null;
   }
 
-  // SINGLE IMAGE LOOP/CIRCLES FUNCTION
-  function imageLoop(id) {
-    var carousel = carousells[id];
+  // Hide all images
+  const hideImages = (id) => {
+    const carousel = carousels[id];
+    console.log('Hiding images for carousel:', id);
+    carousel.imageSlides.forEach(image => image.classList.remove('visible'));
+  };
 
-    var currentDot = carousel.circles[carousel.counter];
-    var currentImage = carousel.imageSlides[carousel.counter];
+  // Remove all dots
+  const removeDots = (id) => {
+    const carousel = carousels[id];
+    console.log('Removing dots for carousel:', id);
+    carousel.circles.forEach(circle => circle.classList.remove('dot'));
+  };
+
+  // Update images and dots
+  const updateCarousel = (id) => {
+    const carousel = carousels[id];
+    console.log('Updating carousel:', id);
+    const previousImage = carousel.imageSlides[carousel.counter];
+    previousImage.classList.remove('visible');
+    
+    carousel.counter = (carousel.counter + 1) % carousel.imageSlides.length;
+
+    const currentDot = carousel.circles[carousel.counter];
+    const currentImage = carousel.imageSlides[carousel.counter];
 
     currentImage.classList.add('visible');
     removeDots(id);
     currentDot.classList.add('dot');
+  };
 
-    carousells[id].counter++;
+  // Handle arrow clicks
+  const arrowClick = (id, increment) => {
+    console.log('Arrow click:', id, 'Increment:', increment);
+    const carousel = carousels[id];
+    clearInterval(carousel.interval);
+
+    hideImages(id);
+    removeDots(id);
+
+    carousel.counter = (carousel.counter + increment + carousel.imageSlides.length) % carousel.imageSlides.length;
+    updateCarousel(id);
+
+    carousel.interval = setInterval(() => slideshow(), 10000);
+  };
+
+  // Slideshow function
+  const slideshow = (id) => {
+    updateCarousel(id);
+  };
+
+  // Initialize carousels and start slideshow
+  initializeCarousels();
+  for (const id in carousels) {
+    const carousel = carousels[id];
+    carousel.interval = setInterval(() => slideshow(id), 4000);
   }
 
-  // LEFT & RIGHT ARROW FUNCTION & CLICK EVENT LISTENERS
-  function arrowClick(e) {
-    e.preventDefault();
-    var id = e.target.parentElement.id;
-    var carousel = carousells[id];
-    
-    var target = e.target;
-    if (target == carousel.leftArrow) {
-      clearInterval(imageSlideshowInterval);
-      hideImages(id);
-      removeDots(id);
-      if (carousel.counter == 1)
-        carousel.counter = (carousel.imageSlides.length - 1);
-      else
-        carousel.counter -= 2;
-
-      imageLoop(id);
-      imageSlideshowInterval = setInterval(slideshow, 10000);
-    } else if (target == carousel.rightArrow) {
-      clearInterval(imageSlideshowInterval);
-      hideImages(id);
-      removeDots(id);
-      if (carousel.counter >= carousel.imageSlides.length)
-        carousel.counter = 0;
-
-      imageLoop(id);
-      imageSlideshowInterval = setInterval(slideshow, 10000);
-    }
-  }
-
-  // IMAGE SLIDE FUNCTION
-  function slideshow() {
-    for (var id in carousells) {
-      var counter = carousells[id].counter;
-      var imageSlides = carousells[id].imageSlides;
-      if (counter < imageSlides.length) {
-        imageLoop(id);
-      } else {
-        carousells[id].counter = 0;
-        hideImages(id);
-        imageLoop(id);
-      }
-    }
-  }
-
-  slideshow();
-  var imageSlideshowInterval = setInterval(slideshow, 2000);
 });
