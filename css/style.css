@@ -31,3 +31,8 @@ a {
     color: #F0EBE7;
     text-decoration: underline;
 }
+
+.anpc {
+    height: 50px;
+    width: 250px;
+}
