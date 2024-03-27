@@ -34,7 +34,9 @@
             3: 'masina',
             4: 'inregistrare',
             5: 'contact',
-            6: 'qna'
+            6: 'qna',
+            7: 'livrare',
+            8: 'retur'
         }
 
         const menu = document.querySelector('.menu');
@@ -59,11 +61,13 @@
                 <a class="menu-item">ESENTA</a>
                 <a class="menu-item">TRASEUL</a>
                 <a class="menu-item">MASINA</a>
+                <a class="menu-item">INREGISTRARE</a>
             </div>
             <div class="menu">
-                <a class="menu-item">INREGISTRARE</a>
                 <a class="menu-item">CONTACT</a>
                 <a class="menu-item">QNA</a>
+                <a class="menu-item">LIVRARE</a>
+                <a class="menu-item">RETUR</a>
             </div>
         </div>
         <div class="language">
@@ -371,6 +375,39 @@
                 <div class="subtitle">&#8250; Nu am masina, pot sa ma inregistrez?</div>
                 <div class="text">
                     Da, poți să-ți cumperi mașina după înscriere.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="livrare">
+        <div class="node">
+            <div class="text-area">
+                <div class="title">LIVRARE</div>
+                <div class="text">
+                    Participantul / echipa va primi confirmarea participării la eveniment prin email la maxim 5 zile
+                    lucrătoare după ce formularul de înscriere a fost completat corect iar taxa de participare a fost
+                    achitata. În cazul în care participantul a completat corect formularul de înscriere dar nu a plătit
+                    taxa de înscriere în maxim 5 zile lucrătoare, cererea de înscriere va fi invalidată.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="retur">
+        <div class="node">
+            <div class="text-area">
+                <div class="title">RETUR / ANULARE
+                    <a href="https://anpc.ro/ce-este-sal/" target="_blank"><img src="img/anpc.png" /></a>
+                </div>
+                <div class="text">
+                    Taxa de înscriere nu poate fi returnată decât în următoarele cazuri:
+                    <br /><br />
+                    &#8250; Taxa este restituita în proportie de 50% dacă evenimentul este anulat din cauza de forta
+                    majora, eveniment extraordinar, dezastru natural. <br />
+                    &#8250; Taxa este restituita în proportie de 100% dacă evenimentul este anulat din alte motive taxa.
+                    <br />
+                    &#8250; Returnarea taxei se va face în maxim 20 de zile lucrătoare. <br />
+                    Dacă participantul/echipajul nu poate participa din motive proprii sau nu se prezinta la startul
+                    evenimentului, nu sunt eligibili pentru returnarea taxei de înscriere. <br />
                 </div>
             </div>
         </div>
