@@ -112,6 +112,10 @@
     text-align: justify;
 }
 
+.container .text-area .text.left {
+    text-align: left;
+}
+
 .container .divider {
     width: 80%;
     height: 1px;
