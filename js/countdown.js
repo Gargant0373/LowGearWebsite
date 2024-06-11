@@ -1,5 +1,5 @@
 // Define the target date for the countdown
-const targetDate = new Date(2024, 5, 7);
+const targetDate = new Date(2024, 7, 11);
 
 document.addEventListener('DOMContentLoaded', function () {
     // Get the countdown element
